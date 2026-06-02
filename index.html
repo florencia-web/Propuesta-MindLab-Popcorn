@@ -267,9 +267,23 @@ a{color:inherit;text-decoration:none}
 .stat-label{font-size:13.5px;color:rgba(255,255,255,0.78);font-weight:500;line-height:1.45;margin-top:14px}
 
 /* INVERSION */
-.inv-note{margin-top:28px;font-size:13.5px;color:var(--gray-500);line-height:1.6;max-width:760px}
-.price{font-size:30px;font-weight:800;color:var(--purple-deep);letter-spacing:-0.02em}
-.price-pre{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray-500);display:block;margin-bottom:4px}
+.inv-price{background:linear-gradient(135deg,var(--purple-deep),var(--purple));border-radius:24px;padding:42px;text-align:center;margin-bottom:22px}
+.inv-price .ip-pre{font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:12px;display:block}
+.inv-price .ip-num{font-size:clamp(36px,5.6vw,58px);font-weight:800;letter-spacing:-0.02em;color:#fff;line-height:1}
+.inv-important{background:#fff;border:1.5px solid var(--purple);border-radius:20px;padding:30px 34px;margin-bottom:22px}
+.inv-important .imp-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--purple);background:rgba(107,33,214,0.08);padding:7px 15px;border-radius:999px;margin-bottom:16px}
+.inv-important p{font-size:15px;color:var(--gray-700);line-height:1.65;margin-bottom:10px}
+.inv-important p:last-child{margin-bottom:0}
+.inv-cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:760px){.inv-cols{grid-template-columns:1fr}}
+.inv-card{background:#fff;border:1px solid #E5E5EA;border-radius:20px;padding:30px}
+.inv-card h4{font-size:13px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin-bottom:18px}
+.inv-card ul{list-style:none}
+.inv-card li{position:relative;padding-left:24px;margin-bottom:12px;font-size:15px;color:var(--gray-900);line-height:1.5}
+.inv-card li:last-child{margin-bottom:0}
+.inv-card li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--purple)}
+.inv-card.pending li::before{background:var(--orange)}
+.inv-foot-note{margin-top:24px;font-size:13.5px;color:var(--gray-500);line-height:1.65;max-width:820px}
 
 /* PASOS */
 .pasos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));background:var(--white);border-radius:20px;border:1px solid #E5E5EA;overflow:hidden}
@@ -354,7 +368,7 @@ a{color:inherit;text-decoration:none}
 <section class="thesis" id="lectura">
   <div class="container">
     <span class="eyebrow reveal">Nuestra lectura del desafío</span>
-    <p class="thesis-statement reveal delay-1">El desafío no es producir un video.<br>Es traducir una tecnología compleja en una narrativa <span class="serif-italic">simple, humana y memorable.</span></p>
+    <p class="thesis-statement reveal delay-1">El desafío no es producir un video.<br>Es traducir una tecnología en una narrativa <span class="serif-italic">simple, humana y memorable.</span></p>
     <p class="thesis-sub reveal delay-2">Lo que hace MindLab es difícil de explicar y fácil de sentir. Nuestro trabajo es invertir esa ecuación: que en 40 segundos cualquier decisor entienda el valor, y en 3 minutos lo desee.</p>
   </div>
 </section>
@@ -364,7 +378,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="section-header">
       <span class="eyebrow reveal">01 · El problema</span>
-      <h2 class="reveal delay-1">Lo que hace MindLab es extraordinario.<br><span class="serif-italic">Y casi imposible de explicar en una slide.</span></h2>
+      <h2 class="reveal delay-1">Lo que hace MindLab es <span class="serif-italic">casi imposible de explicar en una slide.</span></h2>
       <p class="reveal delay-2">MindLab no es un chatbot. Es atención que entiende, accede a los sistemas y resuelve el caso en la misma conversación. Pero en una demo técnica eso se pierde — y el mercado, cuando escucha "IA", todavía imagina robots, frialdad y reemplazo. Esa es la verdadera tensión a ganar: <strong style="color:#fff">automatización vs. humanidad.</strong> El video que gane esa tensión, gana la reunión.</p>
     </div>
     <div class="contrast-grid">
@@ -395,15 +409,14 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="section-header">
       <span class="eyebrow reveal" style="color:rgba(255,255,255,0.85)">02 · La oportunidad de comunicación</span>
-      <h2 class="reveal delay-1" style="color:#fff">Cinco decisiones <span class="serif-italic">que vuelven memorable a la marca.</span></h2>
+      <h2 class="reveal delay-1" style="color:#fff">Cuatro decisiones <span class="serif-italic">que vuelven memorable a la marca.</span></h2>
       <p class="reveal delay-2" style="color:rgba(255,255,255,0.88)">Cada pieza se construye sobre estos cinco pilares. No son features del producto — son las percepciones que queremos instalar.</p>
     </div>
     <div class="opp-grid">
       <div class="opp-card reveal"><span class="opp-num">01</span><h3>Humanizar la IA</h3><p>El protagonista es la persona, no el algoritmo. Mostramos empatía y acompañamiento, no tecnología fría.</p></div>
       <div class="opp-card reveal delay-1"><span class="opp-num">02</span><h3>Mostrar resolución real</h3><p>No "conversa": resuelve. Identifica, accede a los sistemas, ejecuta y cierra el caso. El diferencial, hecho imagen.</p></div>
       <div class="opp-card reveal delay-2"><span class="opp-num">03</span><h3>No parecer un chatbot más</h3><p>Una identidad visual propia que distingue a MindLab de la ola de bots genéricos. Categoría, no comparación.</p></div>
-      <div class="opp-card reveal delay-3"><span class="opp-num">04</span><h3>Humano + IA, juntos</h3><p>La IA absorbe lo repetitivo para que las personas se enfoquen en lo complejo. Potenciar, nunca reemplazar.</p></div>
-      <div class="opp-card reveal delay-4"><span class="opp-num">05</span><h3>Simplificar sin banalizar</h3><p>Claro para un decisor apurado, sin perder la sofisticación real del producto. Simple por fuera, profundo por dentro.</p></div>
+      <div class="opp-card reveal delay-3"><span class="opp-num">04</span><h3>Simplificar sin banalizar</h3><p>Claro para un decisor apurado, sin perder la sofisticación real del producto. Simple por fuera, profundo por dentro.</p></div>
     </div>
   </div>
 </section>
@@ -481,7 +494,7 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="pack-grid">
       <div class="pack reveal">
-        <div class="pack-dur">40–60 segundos</div>
+        <div class="pack-dur">Hasta 40 segundos</div>
         <h3>Video corto</h3>
         <p class="pack-obj">El gancho. Plantea el problema y muestra el "momento en que se resuelve" para generar interés inmediato.</p>
         <div class="pack-rows">
@@ -492,7 +505,7 @@ a{color:inherit;text-decoration:none}
       </div>
       <div class="pack featured reveal delay-1">
         <div class="pack-tag">Profundización</div>
-        <div class="pack-dur">2–3 minutos</div>
+        <div class="pack-dur">Hasta 2 minutos aprox.</div>
         <h3>Video largo</h3>
         <p class="pack-obj">La historia completa. Producto, beneficios, casos de uso, tecnología y visión — con el ritmo de un buen relato.</p>
         <div class="pack-rows">
@@ -581,31 +594,44 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="section-header">
       <span class="eyebrow reveal">09 · Inversión</span>
-      <h2 class="reveal delay-1">Una producción premium, <span class="serif-italic">presentada con transparencia.</span></h2>
-      <p class="reveal delay-2">Tres formas de avanzar. La opción integral comparte concepto y producción entre ambas piezas, optimizando costo y coherencia.</p>
+      <h2 class="reveal delay-1">Una aproximación honesta, <span class="serif-italic">a afinar con el guion final.</span></h2>
+      <p class="reveal delay-2">La producción se cotiza con precisión cuando hay guion: de él dependen las escenas, las iteraciones y los créditos de IA. Mientras tanto, este es nuestro rango estimado para las dos piezas.</p>
     </div>
-    <div class="pack-grid" style="grid-template-columns:1fr 1fr 1fr">
-      <div class="pack reveal">
-        <div class="pack-dur">40–60 segundos</div>
-        <h3 style="font-size:22px">Video corto</h3>
-        <p class="pack-obj">Pieza de captación lista para redes y prospección.</p>
-        <div class="pack-rows"><span class="price-pre">Inversión</span><span class="price">$ X.XXX.XXX</span></div>
+
+    <div class="inv-price reveal">
+      <span class="ip-pre">Presupuesto estimativo · los dos videos</span>
+      <div class="ip-num">USD 8.000 – 10.500</div>
+    </div>
+
+    <div class="inv-important reveal">
+      <span class="imp-tag">Importante</span>
+      <p>Esto es una aproximación de presupuesto que se evaluará al momento de tener el guion / brief exacto, dado que de eso depende la cantidad de tokens a utilizar. Intentaremos mezclar material de banco y con IA para producir el material.</p>
+      <p>Necesitamos tener las versiones finales de los guiones para poder estimar mejor la producción.</p>
+    </div>
+
+    <div class="inv-cols">
+      <div class="inv-card reveal">
+        <h4>Qué contempla el estimativo</h4>
+        <ul>
+          <li>Dos videos distintos: uno de hasta 40 segundos y otro de hasta 2 minutos aprox.</li>
+          <li>Voz en off con ElevenLabs</li>
+          <li>Mezcla de material de banco + generación con IA</li>
+          <li>Aproximadamente 8.000 créditos de IA estimados entre ambos videos</li>
+        </ul>
       </div>
-      <div class="pack reveal delay-1">
-        <div class="pack-dur">2–3 minutos</div>
-        <h3 style="font-size:22px">Video largo</h3>
-        <p class="pack-obj">Pieza de profundización para reuniones y landing.</p>
-        <div class="pack-rows"><span class="price-pre">Inversión</span><span class="price">$ X.XXX.XXX</span></div>
-      </div>
-      <div class="pack featured reveal delay-2">
-        <div class="pack-tag">Recomendado</div>
-        <div class="pack-dur">Las dos piezas</div>
-        <h3 style="font-size:22px">Pack integral</h3>
-        <p class="pack-obj">Corto + largo, mismo concepto y producción. Valor preferencial.</p>
-        <div class="pack-rows"><span class="price-pre">Inversión total</span><span class="price">$ X.XXX.XXX</span></div>
+      <div class="inv-card pending reveal delay-1">
+        <h4>A definir con el guion final</h4>
+        <ul>
+          <li>Cantidad de escenas</li>
+          <li>Cantidad de iteraciones</li>
+          <li>Si habrá personajes recurrentes</li>
+          <li>Motor de generación: Veo, Kling, Seedance o Cinema Studio</li>
+          <li>Si se necesita lipsync</li>
+        </ul>
       </div>
     </div>
-    <p class="inv-note reveal">Valores de referencia, a confirmar con la escaleta / guion final de MindLab, que define alcance, cantidad de escenas y complejidad de producción. Cotización cerrada en 48–72 h una vez recibido el material. Valores sin IVA · No incluye pauta en medios (se factura aparte si se requiere).</p>
+
+    <p class="inv-foot-note reveal">Licencias y consumo de plataformas IA premium (Higgsfield, ElevenLabs u otras necesarias para la producción) no incluidas. Se presupuestarán una vez aprobado el guion y definido el alcance visual. Valores estimativos sin IVA · No incluye pauta en medios.</p>
   </div>
 </section>
 
@@ -662,8 +688,8 @@ a{color:inherit;text-decoration:none}
     'Hola Demian,\n\n'+
     'Queremos avanzar con la propuesta audiovisual para MindLab AI.\n\n'+
     '— Piezas —\n'+
-    '• Video corto (40–60s) — captación\n'+
-    '• Video largo (2–3 min) — profundización comercial\n\n'+
+    '• Video corto (hasta 40s) — captación\n'+
+    '• Video largo (hasta 2 min aprox.) — profundización comercial\n\n'+
     'Quedamos para coordinar referencias, escaleta y kick-off de producción.\n';
   const mailto='mailto:'+TO+'?subject='+encodeURIComponent(SUBJECT)+'&body='+encodeURIComponent(body);
   ctas.forEach(a=>{a.href=mailto;});
