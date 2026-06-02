@@ -284,6 +284,32 @@ a{color:inherit;text-decoration:none}
 .inv-card li::before{content:"";position:absolute;left:0;top:8px;width:7px;height:7px;border-radius:50%;background:var(--purple)}
 .inv-card.pending li::before{background:var(--orange)}
 .inv-foot-note{margin-top:24px;font-size:13.5px;color:var(--gray-500);line-height:1.65;max-width:820px}
+.opt-deliverable{font-size:14.5px;color:var(--gray-700);line-height:1.6;margin:0 0 22px;padding:16px 22px;background:rgba(107,33,214,0.05);border-radius:14px;border:1px solid rgba(107,33,214,0.12)}
+.opt-deliverable strong{color:var(--purple-deep)}
+.opt-block{background:#fff;border:1px solid #E5E5EA;border-radius:22px;padding:34px;margin-bottom:20px;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.opt-block:hover{border-color:#C9B8EC}
+.opt-block.selected{border-color:var(--purple);box-shadow:0 0 0 3px rgba(107,33,214,0.12)}
+.opt-head{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.opt-titles{flex:1;min-width:240px}
+.opt-tag{font-size:11px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--purple);background:rgba(107,33,214,0.08);padding:6px 14px;border-radius:999px;display:inline-block;margin-bottom:14px}
+.opt-block h3{font-size:24px;color:var(--purple-deep);letter-spacing:-0.02em;line-height:1.1}
+.opt-price{text-align:right;flex-shrink:0}
+.opt-price .opt-pre{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--gray-500);display:block;margin-bottom:5px}
+.opt-price .opt-num{font-size:24px;font-weight:800;color:var(--purple-deep);letter-spacing:-0.02em;white-space:nowrap}
+@media(max-width:560px){.opt-price{text-align:left}}
+.opt-desc{font-size:15px;color:var(--gray-700);line-height:1.6;margin:16px 0 18px;max-width:820px}
+.opt-chips{display:flex;flex-wrap:wrap;gap:8px}
+.opt-chip{font-size:12.5px;font-weight:600;color:var(--purple-deep);background:#F1ECFA;border-radius:999px;padding:7px 14px}
+.opt-refs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+@media(max-width:620px){.opt-refs{grid-template-columns:1fr}}
+.opt-note{margin-top:14px;font-size:13px;color:var(--gray-500);line-height:1.55}
+.opt-hint{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin:0 0 16px}
+.opt-select{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:11px 20px;border-radius:999px;border:1.5px solid #E5E5EA;background:#fff;color:var(--purple-deep);font-weight:600;font-size:14px;cursor:pointer;transition:background .2s,border-color .2s,color .2s;font-family:inherit}
+.opt-select:hover{border-color:var(--purple)}
+.opt-radio{width:18px;height:18px;border-radius:50%;border:2px solid #C4C4CF;flex-shrink:0;position:relative;transition:border-color .2s}
+.opt-block.selected .opt-select{background:var(--purple);border-color:var(--purple);color:#fff}
+.opt-block.selected .opt-radio{border-color:#fff}
+.opt-block.selected .opt-radio::after{content:"";position:absolute;inset:3px;border-radius:50%;background:#fff}
 
 /* PASOS */
 .pasos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));background:var(--white);border-radius:20px;border:1px solid #E5E5EA;overflow:hidden}
@@ -594,14 +620,11 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="section-header">
       <span class="eyebrow reveal">09 · Inversión</span>
-      <h2 class="reveal delay-1">Una aproximación honesta, <span class="serif-italic">a afinar con el guion final.</span></h2>
-      <p class="reveal delay-2">La producción se cotiza con precisión cuando hay guion: de él dependen las escenas, las iteraciones y los créditos de IA. Mientras tanto, este es nuestro rango estimado para las dos piezas.</p>
+      <h2 class="reveal delay-1">Tres caminos para producirlo, <span class="serif-italic">a tu medida.</span></h2>
+      <p class="reveal delay-2">Según el estilo visual y el presupuesto, proponemos tres enfoques de producción. Los tres entregan los dos videos con voz en off — cambian la técnica, el grado de realismo y el costo. Todos son aproximaciones a afinar con el guion final.</p>
     </div>
 
-    <div class="inv-price reveal">
-      <span class="ip-pre">Presupuesto estimativo · los dos videos</span>
-      <div class="ip-num">USD 8.000 – 10.500</div>
-    </div>
+    <p class="opt-deliverable reveal"><strong>Las tres opciones entregan lo mismo:</strong> dos videos distintos — uno de hasta 40 segundos y otro de hasta 2 minutos aprox. — con voz en off generada en ElevenLabs.</p>
 
     <div class="inv-important reveal">
       <span class="imp-tag">Importante</span>
@@ -609,26 +632,100 @@ a{color:inherit;text-decoration:none}
       <p>Necesitamos tener las versiones finales de los guiones para poder estimar mejor la producción.</p>
     </div>
 
-    <div class="inv-cols">
-      <div class="inv-card reveal">
-        <h4>Qué contempla el estimativo</h4>
-        <ul>
-          <li>Dos videos distintos: uno de hasta 40 segundos y otro de hasta 2 minutos aprox.</li>
-          <li>Voz en off con ElevenLabs</li>
-          <li>Mezcla de material de banco + generación con IA</li>
-          <li>Aproximadamente 8.000 créditos de IA estimados entre ambos videos</li>
-        </ul>
+    <p class="opt-hint reveal">Elegí tu opción preferida — tocá la que más te guste</p>
+
+    <!-- OPCIÓN A -->
+    <div class="opt-block reveal">
+      <div class="opt-head">
+        <div class="opt-titles">
+          <span class="opt-tag">Opción A · Máximo realismo</span>
+          <h3>Producción con IA · Hiperrealismo</h3>
+        </div>
+        <div class="opt-price"><span class="opt-pre">Precio aprox.</span><span class="opt-num">USD 8.000 – 10.500</span></div>
       </div>
-      <div class="inv-card pending reveal delay-1">
-        <h4>A definir con el guion final</h4>
-        <ul>
-          <li>Cantidad de escenas</li>
-          <li>Cantidad de iteraciones</li>
-          <li>Si habrá personajes recurrentes</li>
-          <li>Motor de generación: Veo, Kling, Seedance o Cinema Studio</li>
-          <li>Si se necesita lipsync</li>
-        </ul>
+      <p class="opt-desc">Buscamos el máximo realismo: personas, escenarios y escenas generados con IA, combinados con material de banco. El camino más cinematográfico, ideal para emocionar y mostrar "lo real".</p>
+      <div class="opt-chips">
+        <span class="opt-chip">Generación con IA</span>
+        <span class="opt-chip">Material de banco</span>
+        <span class="opt-chip">Voz en off ElevenLabs</span>
+        <span class="opt-chip">~8.000 créditos estimados</span>
       </div>
+      <p class="opt-note">Implica resolver variables de producción (ver abajo) que ajustan el número final.</p>
+      <button class="opt-select" type="button"><span class="opt-radio"></span><span class="opt-label">Elegir esta opción</span></button>
+    </div>
+
+    <!-- OPCIÓN B -->
+    <div class="opt-block reveal">
+      <div class="opt-head">
+        <div class="opt-titles">
+          <span class="opt-tag">Opción B · Mejor costo</span>
+          <h3>Motion Graphics Tecnológico</h3>
+        </div>
+        <div class="opt-price"><span class="opt-pre">Precio aprox.</span><span class="opt-num">USD 5.000 – 7.000</span></div>
+      </div>
+      <p class="opt-desc">En lugar de perseguir el hiperrealismo, animamos todo con un estilo tecnológico moderno: UI del producto, flujos de datos, avatares, integraciones, dashboards y casos de uso. Limpio, premium y muy claro.</p>
+      <div class="opt-chips">
+        <span class="opt-chip">Diseño gráfico</span>
+        <span class="opt-chip">Animación</span>
+        <span class="opt-chip">UI simuladas</span>
+        <span class="opt-chip">Integraciones</span>
+        <span class="opt-chip">Data visualization</span>
+      </div>
+      <div class="opt-refs">
+        <div class="mini-video reveal" data-yt="lR3LLZaZZ1M" role="button" tabindex="0" aria-label="Reproducir referencia de motion graphics — demasled">
+          <img src="https://img.youtube.com/vi/lR3LLZaZZ1M/maxresdefault.jpg" alt="Referencia motion graphics demasled" loading="lazy">
+          <div class="mini-overlay"></div>
+          <div class="mini-label"><span class="mini-sub">Referencia</span>demasled</div>
+        </div>
+      </div>
+      <button class="opt-select" type="button"><span class="opt-radio"></span><span class="opt-label">Elegir esta opción</span></button>
+    </div>
+
+    <!-- OPCIÓN C -->
+    <div class="opt-block reveal">
+      <div class="opt-head">
+        <div class="opt-titles">
+          <span class="opt-tag">Opción C · Aprovecha tu Metahuman</span>
+          <h3>Metahuman + Motion Graphics</h3>
+        </div>
+        <div class="opt-price"><span class="opt-pre">Precio aprox.</span><span class="opt-num">USD 7.500 – 9.000</span></div>
+      </div>
+      <p class="opt-desc">Aprovechamos el Metahuman que ya tienen y sumamos gráfica sobreimpresa. Así evitamos generar ~50 escenas con Higgsfield, optimizando costo y tiempo sin resignar presencia humana.</p>
+      <div class="opt-chips">
+        <span class="opt-chip">Metahuman propio</span>
+        <span class="opt-chip">Gráfica sobreimpresa</span>
+        <span class="opt-chip">Motion graphics</span>
+        <span class="opt-chip">Data visualization</span>
+      </div>
+      <div class="opt-refs">
+        <div class="mini-video reveal" data-yt="GOGq-OUM2ao" role="button" tabindex="0" aria-label="Reproducir referencia de motion 1">
+          <img src="https://img.youtube.com/vi/GOGq-OUM2ao/maxresdefault.jpg" alt="Referencia motion 1" loading="lazy">
+          <div class="mini-overlay"></div>
+          <div class="mini-label"><span class="mini-sub">Referencia motion</span>Conexia</div>
+        </div>
+        <div class="mini-video reveal delay-1" data-yt="aTN-IIkJM0w" role="button" tabindex="0" aria-label="Reproducir referencia de motion 2">
+          <img src="https://img.youtube.com/vi/aTN-IIkJM0w/maxresdefault.jpg" alt="Referencia motion 2" loading="lazy">
+          <div class="mini-overlay"></div>
+          <div class="mini-label"><span class="mini-sub">Referencia motion</span>Data Cloud</div>
+        </div>
+        <div class="mini-video reveal delay-2" data-yt="Yik50bm2-rg" role="button" tabindex="0" aria-label="Reproducir referencia de motion 3">
+          <img src="https://img.youtube.com/vi/Yik50bm2-rg/maxresdefault.jpg" alt="Referencia motion 3" loading="lazy">
+          <div class="mini-overlay"></div>
+          <div class="mini-label"><span class="mini-sub">Referencia motion</span>Psilotron</div>
+        </div>
+      </div>
+      <button class="opt-select" type="button"><span class="opt-radio"></span><span class="opt-label">Elegir esta opción</span></button>
+    </div>
+
+    <div class="inv-card pending reveal" style="margin-top:8px">
+      <h4>Variables que afinan el número final (con el guion)</h4>
+      <ul>
+        <li>Cantidad de escenas</li>
+        <li>Cantidad de iteraciones</li>
+        <li>Si habrá personajes recurrentes</li>
+        <li>Motor de generación: Veo, Kling, Seedance o Cinema Studio</li>
+        <li>Si se necesita lipsync</li>
+      </ul>
     </div>
 
     <p class="inv-foot-note reveal">Licencias y consumo de plataformas IA premium (Higgsfield, ElevenLabs u otras necesarias para la producción) no incluidas. Se presupuestarán una vez aprobado el guion y definido el alcance visual. Valores estimativos sin IVA · No incluye pauta en medios.</p>
@@ -679,20 +776,53 @@ a{color:inherit;text-decoration:none}
 </footer>
 
 <script>
-/* CTA → mailto Demian */
-(function(){
+/* CTA → mailto Demian (incorpora la opción elegida si hay una) */
+var __selectedOpt=null;
+function __buildCTA(){
   const ctas=Array.from(document.querySelectorAll('.js-cta-advance'));
   const TO='demianlinet@somospopcorn.com';
   const SUBJECT='Avancemos — Propuesta audiovisual MindLab AI × Popcorn';
-  const body=
+  let body=
     'Hola Demian,\n\n'+
-    'Queremos avanzar con la propuesta audiovisual para MindLab AI.\n\n'+
+    'Queremos avanzar con la propuesta audiovisual para MindLab AI.\n\n';
+  if(__selectedOpt){
+    body+='— Opción elegida —\n• '+__selectedOpt.title+' — '+__selectedOpt.price+'\n\n';
+  }
+  body+=
     '— Piezas —\n'+
     '• Video corto (hasta 40s) — captación\n'+
     '• Video largo (hasta 2 min aprox.) — profundización comercial\n\n'+
     'Quedamos para coordinar referencias, escaleta y kick-off de producción.\n';
   const mailto='mailto:'+TO+'?subject='+encodeURIComponent(SUBJECT)+'&body='+encodeURIComponent(body);
   ctas.forEach(a=>{a.href=mailto;});
+}
+__buildCTA();
+
+/* Selección de opción de producción */
+(function(){
+  const blocks=Array.from(document.querySelectorAll('.opt-block'));
+  if(!blocks.length)return;
+  function infoOf(b){
+    const t=b.querySelector('h3'), p=b.querySelector('.opt-num');
+    return {title:t?t.textContent.trim():'', price:p?p.textContent.trim():''};
+  }
+  function select(b){
+    blocks.forEach(x=>{
+      const on=x===b;
+      x.classList.toggle('selected',on);
+      x.setAttribute('aria-pressed',on?'true':'false');
+      const lbl=x.querySelector('.opt-label');
+      if(lbl)lbl.textContent=on?'Opción elegida':'Elegir esta opción';
+    });
+    __selectedOpt=infoOf(b);
+    __buildCTA();
+  }
+  blocks.forEach(b=>{
+    b.addEventListener('click',e=>{
+      if(e.target.closest('[data-yt]'))return; /* tocar un video no selecciona */
+      select(b);
+    });
+  });
 })();
 
 /* VIDEO → abre en YouTube en pestaña nueva (confiable en local y publicado) */
